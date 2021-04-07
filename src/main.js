@@ -9,12 +9,16 @@ import App from './App.vue'
 import store from './store'
 import router from './router'
 
+import Vant from 'vant'
+import 'vant/lib/index.css'
+
 // 安装基础组件 与自定义组件
 import BaseComponent from './base'
 import CustomComponent from './components'
 
 Vue.use(BaseComponent, {})
 Vue.use(CustomComponent, {})
+Vue.use(Vant)
 
 Vue.config.productionTip = false
 

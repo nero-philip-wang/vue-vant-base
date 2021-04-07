@@ -28,7 +28,7 @@
 
 <script>
 // 使用vant 组件
-import { List, NoticeBar, Cell, Notify } from 'vant'
+import { Notify } from 'vant'
 
 // 使用装饰器
 import { confirm } from '@/decorator'
@@ -41,11 +41,6 @@ import { getDemoData } from '@/api/home'
 
 export default {
   name: 'Home',
-  components: {
-    [List.name]: List,
-    [Cell.name]: Cell,
-    [NoticeBar.name]: NoticeBar
-  },
   data() {
     return {
       currentDate: format(new Date(), DATE_FMT)
