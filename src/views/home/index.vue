@@ -21,7 +21,7 @@
       <van-cell title="加载数据" @click="$_loadData" />
       <van-cell title="使用日期工具类" :value="`今天是${currentDate}`" />
       <van-cell title="你看，右下角有一个vConsole,用来调试的" />
-      <van-cell title="你再看，地址栏有一个?VNK=xxx,这是路由缓存" />
+      <van-cell title="你再看，地址栏有一个?VNK=xxx,这是路由缓存" to="list" />
     </van-list>
   </div>
 </template>

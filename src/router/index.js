@@ -13,11 +13,16 @@ import VueRouter from 'vue-router'
 // 为了首屏加载快，所以首页不使用懒加载
 import Home from '../views/home'
 
-const originalPush = VueRouter.prototype.push
-
 // 处理路由跳转会报错的问题
-VueRouter.prototype.push = function push(...rest) {
-  return originalPush.apply(this, rest).catch(err => err)
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(...params) {
+  let promise = originalPush.apply(this, params)
+  return promise && promise.catch(err => err)
+}
+const originalReplace = VueRouter.prototype.replace
+VueRouter.prototype.replace = function replace(...params) {
+  let promise = originalReplace.apply(this, params)
+  return promise && promise.catch(err => err)
 }
 
 Vue.use(VueRouter)
